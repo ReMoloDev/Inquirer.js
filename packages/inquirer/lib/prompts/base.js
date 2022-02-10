@@ -29,7 +29,7 @@ class Prompt {
       filteringText: '',
       when: () => true,
       suffix: '',
-      prefix: chalk.green('?'),
+      prefix: chalk.rgb(89,45,212)('?'),
     });
 
     // Make sure name is present
