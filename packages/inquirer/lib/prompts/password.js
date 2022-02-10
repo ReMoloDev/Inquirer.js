@@ -72,7 +72,7 @@ class PasswordPrompt extends Base {
   getMaskedValue(value) {
     if (this.status === 'answered') {
       return this.opt.mask
-        ? chalk.cyan(mask(value, this.opt.mask))
+        ? cchalk.rgb(206,162,221)(mask(value, this.opt.mask))
         : chalk.italic.dim('[hidden]');
     }
     return this.opt.mask
