@@ -90,7 +90,7 @@ class ListPrompt extends Base {
 
     // Render choices or answer depending on the state
     if (this.status === 'answered') {
-      message += chalk.cyan(this.opt.choices.getChoice(this.selected).short);
+      message += chalk.rgb(206,162,221)(this.opt.choices.getChoice(this.selected).short);
     } else {
       const choicesStr = listRender(this.opt.choices, this.selected);
       const indexPosition = this.opt.choices.indexOf(
@@ -196,7 +196,7 @@ function listRender(choices, pointer) {
     const isSelected = i - separatorOffset === pointer;
     let line = (isSelected ? figures.pointer + ' ' : '  ') + choice.name;
     if (isSelected) {
-      line = chalk.cyan(line);
+      line = chalk.rgb(206,162,221)(line);
     }
 
     output += line + ' \n';
