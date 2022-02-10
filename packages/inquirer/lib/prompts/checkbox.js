@@ -90,19 +90,19 @@ class CheckboxPrompt extends Base {
     if (!this.dontShowHints) {
       message +=
         '(Press ' +
-        chalk.cyan.bold('<space>') +
+        chalk.rgb(206,162,221).bold('<space>') +
         ' to select, ' +
-        chalk.cyan.bold('<a>') +
+        chalk.rgb(206,162,221).bold('<a>') +
         ' to toggle all, ' +
-        chalk.cyan.bold('<i>') +
+        chalk.rgb(206,162,221).bold('<i>') +
         ' to invert selection, and ' +
-        chalk.cyan.bold('<enter>') +
+        chalk.rgb(206,162,221).bold('<enter>') +
         ' to proceed)';
     }
 
     // Render choices or answer depending on the state
     if (this.status === 'answered') {
-      message += chalk.cyan(this.selection.join(', '));
+      message += chalk.rgb(206,162,221)(this.selection.join(', '));
     } else {
       const choicesStr = renderChoices(this.opt.choices, this.pointer);
       const indexPosition = this.opt.choices.indexOf(
@@ -250,7 +250,7 @@ function renderChoices(choices, pointer) {
     } else {
       const line = getCheckbox(choice.checked) + ' ' + choice.name;
       if (i - separatorOffset === pointer) {
-        output += chalk.cyan(figures.pointer + line);
+        output += chalk.rgb(206,162,221)(figures.pointer + line);
       } else {
         output += ' ' + line;
       }
@@ -269,7 +269,7 @@ function renderChoices(choices, pointer) {
  */
 
 function getCheckbox(checked) {
-  return checked ? chalk.green(figures.radioOn) : figures.radioOff;
+  return checked ? chalk.rgb(89,45,212)(figures.radioOn) : figures.radioOff;
 }
 
 module.exports = CheckboxPrompt;
