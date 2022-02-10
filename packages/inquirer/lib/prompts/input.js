@@ -57,7 +57,7 @@ class InputPrompt extends Base {
     if (transformer) {
       message += transformer(appendContent, this.answers, { isFinal });
     } else {
-      message += isFinal ? chalk.cyan(appendContent) : appendContent;
+      message += isFinal ? chalk.rgb(206,162,221)(appendContent) : appendContent;
     }
 
     if (error) {
