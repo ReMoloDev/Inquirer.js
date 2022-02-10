@@ -62,7 +62,7 @@ class ConfirmPrompt extends Base {
     let message = this.getQuestion();
 
     if (typeof answer === 'boolean') {
-      message += chalk.cyan(answer ? 'Yes' : 'No');
+      message += chalk.rgb(206,162,221)(answer ? 'Yes' : 'No');
     } else {
       message += this.rl.line;
     }
