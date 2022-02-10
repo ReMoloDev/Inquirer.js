@@ -91,7 +91,7 @@ class RawListPrompt extends Base {
     let bottomContent = '';
 
     if (this.status === 'answered') {
-      message += chalk.cyan(this.opt.choices.getChoice(this.selected).short);
+      message += chalk.rgb(206,162,221)(this.opt.choices.getChoice(this.selected).short);
     } else {
       const choicesStr = renderChoices(this.opt.choices, this.selected);
       message +=
@@ -204,7 +204,7 @@ function renderChoices(choices, pointer) {
     const index = i - separatorOffset;
     let display = index + 1 + ') ' + choice.name;
     if (index === pointer) {
-      display = chalk.cyan(display);
+      display = chalk.rgb(206,162,221)(display);
     }
 
     output += display;
