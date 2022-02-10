@@ -77,7 +77,7 @@ class ExpandPrompt extends Base {
     let bottomContent = '';
 
     if (this.status === 'answered') {
-      message += chalk.cyan(this.answer);
+      message += chalk.rgb(206,162,221)(this.answer);
     } else if (this.status === 'expanded') {
       const choicesStr = renderChoices(this.opt.choices, this.selectedKey);
       message += this.paginator.paginate(choicesStr, this.selectedKey, this.opt.pageSize);
@@ -91,7 +91,7 @@ class ExpandPrompt extends Base {
     }
 
     if (hint) {
-      bottomContent = chalk.cyan('>> ') + hint;
+      bottomContent = chalk.rgb(206,162,221)('>> ') + hint;
     }
 
     this.screen.render(message, bottomContent);
@@ -128,7 +128,7 @@ class ExpandPrompt extends Base {
 
       let choiceStr = choice.key + ') ' + choice.name;
       if (this.selectedKey === choice.key) {
-        choiceStr = chalk.cyan(choiceStr);
+        choiceStr = chalk.rgb(206,162,221)(choiceStr);
       }
 
       output += choiceStr;
@@ -261,7 +261,7 @@ function renderChoices(choices, pointer) {
 
     let choiceStr = choice.key + ') ' + choice.name;
     if (pointer === choice.key) {
-      choiceStr = chalk.cyan(choiceStr);
+      choiceStr = chalk.rgb(206,162,221)(choiceStr);
     }
 
     output += choiceStr;
